@@ -1,0 +1,18 @@
+<body>
+<meta charset="UTF-8">
+<script src="https://code.jquery.com/jquery-1.8.3.js"></script>
+<script src="https://code.jquery.com/URI.min.js"></script>
+
+<form id="form1">
+<input type="radio" name="color" value="1">赤<br>
+<input type="radio" name="color" value="2">緑<br>
+<input type="radio" name="color" value="3">青<br>
+</form>
+<script>
+var uri = new URI();
+var color = uri.query(true).color; // クエリ文字列colorを取得
+if (! color) color = 1;
+$('#form1').find('input[name="color"][value="' + color + '"]').attr("checked", true);
+</script>
+</body>
+~            
